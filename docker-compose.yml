@@ -1,0 +1,13 @@
+services:
+  java21:
+    image: dev-pi-java:21
+    build:
+      context: .
+      dockerfile: ./dockerfiles/java-21-maven.Dockerfile
+    working_dir: /workspace
+    command: tail -f /dev/null
+    volumes:
+      - ./agents-workspaces:/workspace
+    environment:
+      - GH_TOKEN=${GH_TOKEN}
+      - ZAI_API_KEY=${ZAI_API_KEY}
