@@ -27,4 +27,6 @@ RUN curl -fsSL https://pi.dev/install.sh | sh
 # Adicionando no path
 ENV PATH="/home/agent/.local/bin:$PATH"
 
+RUN pi install npm:pi-caveman
+
 WORKDIR /workspace
